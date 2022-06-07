@@ -39,12 +39,17 @@ function deleteAppointment(req, res) {
     );
 
 }
+function edit(req, res) {
+    Appointment.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, appointment) {
+      if (err || !appointment) return res.redirect('/appointments');
+      res.render('appointments/edit', {appointment});
+    });
+  }
 
-function editAppointment(req, res) {
-   Appointment.findOne({_id: req.params.id, userRecommending: req.user._id}, function)
-
-    }
-}
+function forUser(req, res) {
+    Appointment.find({user: req.user._id}, (err, appointments)=>{
+       res.render('appointments/index', {title: 'My Appointments', appointments } )
+    });
 
 
 function newAppointment(req, res) {
