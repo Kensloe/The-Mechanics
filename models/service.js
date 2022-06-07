@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const serviceSchema = new Schema({
     name: String,
     price: Number,
-    image: String,
+    imoji: String,
 });
 
 module.exports = mongoose.model('Service', serviceSchema)

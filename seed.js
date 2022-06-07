@@ -1,14 +1,13 @@
 require('dotenv').config();
 require('./config/database');
 
-const Category = require('./models');
-const Item = require('./models/item');
+const Service = require('./models/service');
 
 // Pattern:  IIFE
 (async function() {
 
-  await Item.deleteMany({});
-  const items = await Item.create([
+  await Service.deleteMany({});
+  const services = await Service.create([
     {name: 'Oil Change', emoji: '🛢️', price: 40},
     {name: 'Tire Replacement', emoji: '🛞', price: 25},
     {name: 'Coolant System Services', emoji: '💧', price: 3.95},
@@ -16,12 +15,12 @@ const Item = require('./models/item');
     {name: 'Battery Replacement', emoji: '🔋', price: 20},
     {name: 'Windshield Wipers and Fluid', emoji: '💧', price: 20},
     {name: 'Scheduled Maintenance', emoji: '🔧', price: 30},
-    {name: 'Cabin Filter Replacement', emoji: '🚗', price: 4.95},
+    {name: 'Cabin Filter Replacement', emoji: '🚗', price: 40},
     {name: 'Headlights', emoji: '🚘', price: 30},
    
   ]);
 
-  console.log(items)
+  console.log(services)
 
   process.exit();
 
