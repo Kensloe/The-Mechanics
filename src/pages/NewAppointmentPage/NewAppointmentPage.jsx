@@ -4,20 +4,23 @@ import * as servicesAPI from '../../utilities/services-api';
 
 export default function NewAppointmentPage({user, setUser }) {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
-  const [services, setServices] = useState([]);
+  const [selectedServices, setSelectedServices] = useState([]);
   const [availServices, setAvailServices] = useState([]);
 
 
 
   useEffect(function() {
     async function getServices() {
-      const items = await servicesAPI.getAll();
+      const services = await servicesAPI.getAll();
+      setAvailServices(services);
     }
+    getServices();
+  }, []);
 
 
 
   function invalidData() {
-    return date.length !== 10 || services.length === 0;
+    return date.length !== 10 || selectedServices.length === 0;
   };
 
 
@@ -35,5 +38,5 @@ export default function NewAppointmentPage({user, setUser }) {
   </main>
 
   );
-  )
+  
 }

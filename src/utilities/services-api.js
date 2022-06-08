@@ -3,11 +3,8 @@
 import sendRequest from './send-request';
 const BASE_URL = '/api/services';
 
-export function signAll(userData) {
-  return sendRequest(BASE_URL, 'POST', userData);
-}
 
-export function getById(id) {
-    return sendRequest(`${BASE_URL}/${id}`);
-  }
+export function getAll() {
+  return sendRequest(BASE_URL);
+}
   
