@@ -2,7 +2,17 @@ import { useState, useEffect, } from "react";
 import * as servicesAPI from '../../utilities/services-api';
 
 
+export default function NewAppointmentPage({user, setUser }) {
+  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+  const [services, setServices] = useState([]);
+  const [availServices, setAvailServices] = useState([]);
 
+
+
+  useEffect(function() {
+    async function getServices() {
+      const items = await servicesAPI.getAll();
+    }
 
 
 
