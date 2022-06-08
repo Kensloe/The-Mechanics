@@ -3,10 +3,24 @@ const Appointment = require('../models/appointment);
 
 
 module.exports {
+    index,
+    show,
     new: newService,
     create,
     addAppointment
 };
+
+
+async function index(req, res) {
+  const services = await Service.find({}).sort('name')
+  services.sort('name');
+}
+
+async function show(req, res) {
+  const service = await Service.findById(req.params.id);
+  res.json(service);
+}
+
 
 function create(req, res) {
     Service.create(req.body, function (err, service) {

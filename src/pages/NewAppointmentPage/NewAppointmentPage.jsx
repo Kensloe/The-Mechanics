@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect, } from "react";
+import * as servicesAPI from '../../utilities/services-api';
 
 
 export default function NewAppointmentPage({user, setUser }) {
@@ -6,9 +7,18 @@ export default function NewAppointmentPage({user, setUser }) {
   const [services, setServices] = useState([]);
   const [availServices, setAvailServices] = useState([]);
 
+
+
+  useEffect(function() {
+    async function getServices() {
+      const items = await servicesAPI.getAll();
+    }
+
+
+
   function invalidData() {
     return date.length !== 10 || services.length === 0;
-  }
+  };
 
 
 
@@ -23,6 +33,7 @@ export default function NewAppointmentPage({user, setUser }) {
   <button type="submit" disabled={invalidData()}>Create Appointment</button>
   </form>
   </main>
-  
+
   );
+  )
 }
