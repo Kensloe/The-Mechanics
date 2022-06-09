@@ -10,7 +10,7 @@ const Service = require('./models/service');
   const services = await Service.create([
     {name: 'Oil Change', emoji: '🛢️', price: 40},
     {name: 'Tire Replacement', emoji: '🛞', price: 25},
-    {name: 'Coolant System Services', emoji: '💧', price: 3.95},
+    {name: 'Coolant System Services', emoji: '💧', price: 25},
     {name: 'Wheel Balance and Rotation', emoji: '🚙', price: 60},
     {name: 'Battery Replacement', emoji: '🔋', price: 20},
     {name: 'Windshield Wipers and Fluid', emoji: '💧', price: 20},
