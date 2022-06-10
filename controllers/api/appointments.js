@@ -1,5 +1,6 @@
 const Service = require('../../models/service');
 const Appointment = require('../../models/appointment');
+const appointment = require('../../models/appointment');
 module.exports = {
 
     show,
@@ -22,11 +23,10 @@ function create(req, res) {
     
 }
 
-function deleteAppointment(req, res) {
+// function deleteAppointment(req, res) {
+//     const remove = await appointment.findByIdAndDelete(req.params.id);
+//     res.json(remove);
     
-
-
-
 }
 function editAppointment(req, res) {
     
