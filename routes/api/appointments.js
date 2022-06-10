@@ -7,5 +7,7 @@ const appointmentsCtrl = require('../../controllers/api/appointments');
 
 router.post('/new', appointmentsCtrl.newAppointment);
 
+router.delete('/:id',appointmentsCtrl.deleteAppointment);
+
 
 module.exports = router;

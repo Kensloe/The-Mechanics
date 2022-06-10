@@ -17,6 +17,7 @@ export default function NewAppointmentPage({user, setUser }) {
     async function getServices() {
       const services = await servicesAPI.getAll();
       setAvailServices(services);
+      console.log(services);
       setSelectedService(services[0]._id)
     }
     getServices();
@@ -30,13 +31,14 @@ export default function NewAppointmentPage({user, setUser }) {
     setSelectedServices([...selectedServices, service]);
   }
 
-  function handleSubmit(evt) {
+  async function handleSubmit(evt) {
     evt.preventDefault();
     const payload = {
       date, 
       services: selectedServices
     }
-    appointmentsAPI.create(payload)
+    const newAppointment = await appointmentsAPI.create(payload)
+    console.log(newAppointment);
   }
 
 

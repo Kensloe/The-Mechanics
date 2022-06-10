@@ -23,9 +23,9 @@ function create(req, res) {
     
 }
 
-// function deleteAppointment(req, res) {
-//     const remove = await appointment.findByIdAndDelete(req.params.id);
-//     res.json(remove);
+async function deleteAppointment(req, res) {
+    const remove = await Appointment.findByIdAndDelete(req.params.id);
+    res.json(remove);
     
 }
 function editAppointment(req, res) {
@@ -38,9 +38,12 @@ function forUser(req, res) {
     }
 
 
-function newAppointment(req, res) {
+ async function newAppointment(req, res) {
+    req.body.user = req.user._id
+    console.log(req.body);
+    const newAppointment = await Appointment.create(req.body)
+    res.json(newAppointment);
     
-
 }
 
 

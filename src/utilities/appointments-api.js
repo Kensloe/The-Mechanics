@@ -4,6 +4,14 @@ import sendRequest from './send-request';
 const BASE_URL = '/api/appointments';
 
 export function create(appointment) {
-  console.log('appointment');
+  console.log(appointment);
+
   return sendRequest(`${BASE_URL}/new`, 'POST', appointment);
 }
+
+export function deleteAppointment(id) {
+  console.log('appointment');
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
+
+

@@ -7,6 +7,7 @@ module.exports = {
 
 
 async function index(req, res) {
+  console.log('Im here')
   const services = await Service.find({}).sort('name');
   res.json(services);
 }
