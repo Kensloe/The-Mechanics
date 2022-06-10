@@ -7,7 +7,6 @@ const serviceSchema = new Schema({
     emoji: String,
 });
 
-
 const appointmentSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,

@@ -17,7 +17,10 @@ function App() {
           <Routes>
             {/* Route components in here */}
             <Route path="/appointments/new" element={<NewAppointmentPage />} />
+            {/* <Route path="/appointments/create" element={<Services />} */}
+
           </Routes>
+          
         </>
         :
         <AuthPage setUser={setUser} />

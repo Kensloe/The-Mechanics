@@ -26,6 +26,7 @@ app.use('/api/users', require('./routes/api/users'));
 // Protect all routes in the items router
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/services', ensureLoggedIn, require('./routes/api/services'));
+app.use('/api/appointments', ensureLoggedIn, require('./routes/api/appointments'));
 
 
 // "catch-all" route that will match all GET requests

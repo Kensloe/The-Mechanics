@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import ServiceList from "../../components/ServiceList/SeviceList";
 import * as servicesAPI from '../../utilities/services-api';
+import * as appointmentsAPI from '../../utilities/appointments-api';
 
 
 
@@ -35,6 +36,7 @@ export default function NewAppointmentPage({user, setUser }) {
       date, 
       services: selectedServices
     }
+    appointmentsAPI.create(payload)
   }
 
 

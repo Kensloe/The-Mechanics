@@ -4,5 +4,6 @@ import sendRequest from './send-request';
 const BASE_URL = '/api/appointments';
 
 export function create(appointment) {
-  return sendRequest(BASE_URL, 'POST', appointment);
+  console.log('appointment');
+  return sendRequest(`${BASE_URL}/new`, 'POST', appointment);
 }
