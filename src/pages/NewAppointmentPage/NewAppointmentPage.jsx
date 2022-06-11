@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from "react";
-import ServiceList from "../../components/ServiceList/SeviceList";
+import { useState, useEffect } from "react";
+import ServiceList from "../ServiceList/ServiceList";
 import * as servicesAPI from '../../utilities/services-api';
 import * as appointmentsAPI from '../../utilities/appointments-api';
 
 
 
-export default function NewAppointmentPage({user, setUser }) {
+export default function NewAppointmentPage({ user, setUser }) {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [selectedServices, setSelectedServices] = useState([]);
   const [selectedService, setSelectedService] = useState('');
@@ -13,7 +13,7 @@ export default function NewAppointmentPage({user, setUser }) {
   const [availServices, setAvailServices] = useState([]);
 
 
-  useEffect(function() {
+  useEffect(function () {
     async function getServices() {
       const services = await servicesAPI.getAll();
       setAvailServices(services);
@@ -34,7 +34,7 @@ export default function NewAppointmentPage({user, setUser }) {
   async function handleSubmit(evt) {
     evt.preventDefault();
     const payload = {
-      date, 
+      date,
       services: selectedServices
     }
     const newAppointment = await appointmentsAPI.create(payload)
@@ -51,28 +51,28 @@ export default function NewAppointmentPage({user, setUser }) {
   return (
     <main className="NewApointmentPage">
       <h1>Enter New Appointment</h1>
-    
 
- <form onSubmit={handleSubmit}> 
-  <input type="date" min={new Date().toISOString().slice(0, 10)} value={date}
-  onChange={(e) => setDate(e.target.value)}
-/>
-<select value={selectedService} onChange={(e)=> setSelectedService(e.target.value) }>
-  {
-   availServices.map( (service)=>(
-   <option key={service._id} value={service._id}>
-     {service.name}
-   </option> 
-  ) )}
-</select>
-  <button type="submit" disabled={invalidData()}>Create Appointment</button>
-  </form>
-<button type="button" disabled={availServices.length === 0} onClick={addService}>Add</button>
-  <ServiceList services={selectedServices} />
 
-  
-  </main>
+      <form onSubmit={handleSubmit}>
+        <input type="date" min={new Date().toISOString().slice(0, 10)} value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+        <select value={selectedService} onChange={(e) => setSelectedService(e.target.value)}>
+          {
+            availServices.map((service) => (
+              <option key={service._id} value={service._id}>
+                {service.name}
+              </option>
+            ))}
+        </select>
+        <button type="submit" disabled={invalidData()}>Create Appointment</button>
+      </form>
+      <button type="button" disabled={availServices.length === 0} onClick={addService}>Add</button>
+      <ServiceList services={selectedServices} />
+
+
+    </main>
 
   );
-  
+
 }

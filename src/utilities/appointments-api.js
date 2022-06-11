@@ -13,6 +13,10 @@ export function deleteAppointment(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
+export function editAppointment(appointment, id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', appointment);
+}
+
 export function getAllForUser() {
   return sendRequest(BASE_URL);
 }
