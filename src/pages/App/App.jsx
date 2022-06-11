@@ -5,6 +5,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewAppointmentPage from '../NewAppointmentPage/NewAppointmentPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
+import AppointmentList from '../AppointmentList/AppointmentList';
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -17,7 +18,7 @@ function App() {
           <Routes>
             {/* Route components in here */}
             <Route path="/appointments/new" element={<NewAppointmentPage />} />
-            {/* <Route path="/appointments/create" element={<Services />} */}
+            <Route path="/appointments" element={<AppointmentList />}/>
 
           </Routes>
           

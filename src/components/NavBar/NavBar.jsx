@@ -16,6 +16,8 @@ export default function NavBar({ user, setUser }) {
       <div className='nav-container'>
       <Link to="/appointments/new">New Appointment</Link>
       &nbsp; | &nbsp;
+      <Link to="/appointments">My Appointments</Link>
+      &nbsp; | &nbsp;
       <span>Welcome, {user.name}</span>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>

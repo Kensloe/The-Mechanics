@@ -10,8 +10,12 @@ export function create(appointment) {
 }
 
 export function deleteAppointment(id) {
-  console.log('appointment');
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
+
+export function getAllForUser() {
+  return sendRequest(BASE_URL);
+}
+
 
 

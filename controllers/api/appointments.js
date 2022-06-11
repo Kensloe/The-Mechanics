@@ -1,6 +1,5 @@
 const Service = require('../../models/service');
 const Appointment = require('../../models/appointment');
-const appointment = require('../../models/appointment');
 module.exports = {
 
     show,
@@ -8,7 +7,7 @@ module.exports = {
     newAppointment,
     deleteAppointment,
     editAppointment,
-    forUser,
+    getForUser,
 
 };
 
@@ -33,9 +32,11 @@ function editAppointment(req, res) {
 
   }
 
-function forUser(req, res) {
+async function getForUser(req, res) {
+    const appointments = await Appointment.find({user: req.user._id})
+    res.json(appointments);
     
-    }
+}
 
 
  async function newAppointment(req, res) {
