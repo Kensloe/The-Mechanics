@@ -32,8 +32,8 @@ async function deleteAppointment(req, res) {
 async function editAppointmentForm(req, res) {
     console.log(req.body);
     console.log(req.params._id);
-    const post = await Post.findByIdAndEdit(req.params.id, req.body, { new: true })
-    console.log(post);
+    const appointment = await Appointment.findByIdAndEdit(req.params.id, req.body, { new: true })
+    console.log(appointment);
 
 }
 

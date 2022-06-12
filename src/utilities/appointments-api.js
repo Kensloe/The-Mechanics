@@ -13,7 +13,7 @@ export function deleteAppointment(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
 
-export function editAppointment(appointment, id) {
+export function editAppointmentForm(appointment, id) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', appointment);
 }
 

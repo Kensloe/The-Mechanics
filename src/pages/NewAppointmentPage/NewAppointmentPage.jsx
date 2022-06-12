@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 import ServiceList from "../ServiceList/ServiceList";
 import * as servicesAPI from '../../utilities/services-api';
 import * as appointmentsAPI from '../../utilities/appointments-api';
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function NewAppointmentPage({ user, setUser }) {
+  const navigate = useNavigate();
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [selectedServices, setSelectedServices] = useState([]);
   const [selectedService, setSelectedService] = useState('');
 
   const [availServices, setAvailServices] = useState([]);
+
+
 
 
   useEffect(function () {
@@ -39,6 +43,7 @@ export default function NewAppointmentPage({ user, setUser }) {
     }
     const newAppointment = await appointmentsAPI.create(payload)
     console.log(newAppointment);
+    navigate('/appointments')
   }
 
 

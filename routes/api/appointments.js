@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const appointmentsCtrl = require('../../controllers/api/appointments');
-const editAppointmentForm = require('../../controllers/api/appointments');
 
 // CREATE /api/appointment/
 

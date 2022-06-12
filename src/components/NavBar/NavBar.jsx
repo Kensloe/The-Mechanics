@@ -13,6 +13,9 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
+      <div className='logo'>
+      <img src="https://toppng.com/uploads/preview/car-repair-mechanic-working-on-car-logo-11563230852ir0tylqu7y.png" alt="" />
+      </div>
       <div className='nav-container'>
       <Link to="/appointments/new">New Appointment</Link>
       &nbsp; | &nbsp;

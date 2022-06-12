@@ -23,8 +23,8 @@ body {
   background-color: var(--tan-4);
   padding: 2vmin;
   height: 100vh;
-  /* background-image:url("https://i.imgur.com/2AGd9Hq.jpg");
-  background-size: cover;  */
+  background-image:url("https://hollywoodmechanic.com/wp-content/uploads/2020/08/hollywood-mechanic-los-angeles-supercar-repair.jpg");
+  background-size: cover; 
 }
 
 code {
@@ -80,10 +80,16 @@ code {
 }
 
 .form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+    border-radius: 10px;
 }
 
 p.error-message {
@@ -151,4 +157,19 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+a {
+  color:white;
+}
+p {
+  color: white;
+}
+li {
+  color: white;
+}
+h1 {
+  color: white;
+}
+span {
+  color: white;
 }
