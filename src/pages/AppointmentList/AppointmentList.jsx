@@ -42,9 +42,9 @@ export default function AppointmentList() {
       {appointment && <EditAppointmentForm id={appointment[0]._id}{...appointment[0]
 
       } />}
-
+      <div className='userAppointment'>
       {appointments.map(a =>
-        <div>
+        <div className='appointment'>
           <button onClick={() => handleDelete(a._id)}>X</button>
           <button onClick={() => handleEdit(a._id)}>Edit</button>
           <p>
@@ -61,6 +61,7 @@ export default function AppointmentList() {
           </ul>
         </div>
       )}
+      </div>
     </main>
   );
 }

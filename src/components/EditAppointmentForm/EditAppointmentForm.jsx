@@ -6,12 +6,12 @@ import * as appointmentsAPI from '../../utilities/appointments-api';
 
 
 export default function EditAppointmentPage(props) {
-  const [date, setDate] = useState(props.date|| new Date().toISOString().slice(0, 10));
+  const [date, setDate] = useState(props.date || new Date().toISOString().slice(0, 10));
   const [selectedServices, setSelectedServices] = useState([]);
   const [selectedService, setSelectedService] = useState(props.services[0]._id);
 
   const [availServices, setAvailServices] = useState([]);
-  const {user, services, id} = props
+  const { user, services, id } = props
 
   useEffect(function () {
     async function getServices() {
@@ -36,14 +36,14 @@ export default function EditAppointmentPage(props) {
     // const id = this.props.id;
     const payload = {
       date,
-      services: selectedServices, 
+      services: selectedServices,
       user: user
     }
     const editAppointmentForm = await appointmentsAPI.editAppointmentForm(payload, id)
     console.log(editAppointmentForm);
   }
 
-console.log(props)
+  console.log(props)
   function invalidData() {
     return date.length !== 10 || selectedServices.length === 0;
   };
