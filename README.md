@@ -7,6 +7,7 @@
 <h3> :atom_symbol: Getting Started </h3>
 <a href="https://trello.com/b/m0v6TMeL/final-project">Trello</a> :&nbsp :&nbsp
 <a href="https://boiling-retreat-69040.herokuapp.com/">Deployed Heroku App</a> :&nbsp :&nbsp
+<a href="https://boiling-retreat-69040.herokuapp.com/">Deployed Heroku App</a> :&nbsp :&nbsp
 <a href="https://imgur.com/a/5tKMsDh">Screenshots</a>
  
  
